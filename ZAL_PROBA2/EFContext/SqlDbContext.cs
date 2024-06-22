@@ -34,7 +34,7 @@ public class SqlDbContext : DbContext
                 .HasName("Task_pk");
             entity.ToTable("Task");
             
-            entity.Property(e => e.IdTask).ValueGeneratedNever();
+            entity.Property(e => e.IdTask).HasComputedColumnSql();
             
             entity.Property(e => e.Name)
                 .HasMaxLength(200)
